@@ -489,7 +489,7 @@ footer > .container {
 
 .form-footer {
   display: flex;
-  column-gap: 24px;
+  gap: 24px;
 }
 
 /* .input-button-container {
@@ -610,6 +610,7 @@ footer > .container {
 .close-btn:hover,
 .close-btn:focus {
   background-color: #404bbf;
+  border: none;
 }
 
 .close-btn:hover .close-btn-icon,
