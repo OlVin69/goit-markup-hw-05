@@ -467,10 +467,16 @@ footer > .container {
   fill: #f4f4fd;
 }
 
-.form-footer {
+.form-footer-text {
+  margin-bottom: 16px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
-.subscribe-label {
+/* .subscribe-label {
   display: block;
   min-width: 75px;
   color: #fff;
@@ -479,38 +485,48 @@ footer > .container {
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-bottom: 16px;
-}
+} */
 
-.input-button-container {
+.form-footer {
   display: flex;
   column-gap: 24px;
 }
 
+/* .input-button-container {
+  display: flex;
+  column-gap: 24px;
+} */
+
 .subscribe-input {
   width: 264px;
   height: 40px;
-  padding: 8px 16px;
+  padding-left: 16px;
   color: #fff;
-  background-color: var(--secondary-background-color);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  background-color: transparent;
   border-radius: 4px;
   border: 1px solid #fff;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 
 .subscribe-input::placeholder {
   color: #fff;
-  font-size: 12px;
-  font-weight: 400;
+  /* font-size: 12px;
   line-height: 2;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.04em; */
 }
 
 .subscribe-button {
+  min-width: 165px;
+  height: 40px;
   display: flex;
   padding: 8px 24px;
   justify-content: center;
   align-items: center;
   gap: 16px;
+  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -518,10 +534,15 @@ footer > .container {
   color: #fff;
   background-color: var(--accent-color);
   cursor: pointer;
-  padding: 8px 24px;
   border: none;
   border-radius: 4px;
 }
+
+.subscribe-icon {
+  margin-left: 16px;
+}
+
+/* MODAL WINDOW */
 
 .backdrop {
   position: fixed;
@@ -548,7 +569,7 @@ footer > .container {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   width: 408px;
   min-height: 584px;
   padding-top: 72px;
@@ -557,9 +578,15 @@ footer > .container {
   padding-bottom: 24px;
   border-radius: 4px;
   background-color: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 24px;
   right: 24px;
@@ -568,10 +595,11 @@ footer > .container {
   line-height: 0;
   cursor: pointer;
   border-radius: 50%;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #e7e9fc;
   padding: 0;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn-icon {
@@ -595,6 +623,7 @@ footer > .container {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  text-align: center;
   color: #2e2f42;
   margin-bottom: 16px;
 }
@@ -620,6 +649,8 @@ footer > .container {
 .contact-form-input {
   width: 100%;
   height: 40px;
+  background-color: transparent;
+  outline: transparent;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   padding-left: 38px;
@@ -652,6 +683,8 @@ footer > .container {
   font-weight: 400;
   line-height: 1.17;
   letter-spacing: 0.04em;
+  background-color: transparent;
+  outline: transparent;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   padding: 8px 16px;
@@ -666,6 +699,10 @@ footer > .container {
 .contact-form-comment:focus {
   border-color: #4d5ae5;
   outline: transparent;
+}
+
+.textarea-wrapper {
+  margin-bottom: 16px;
 }
 
 .contact-form-checkbox-wrapper {
@@ -697,13 +734,17 @@ footer > .container {
   cursor: pointer;
   fill: transparent;
   margin-right: 8px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-form-checkbox:checked
   + .contact-form-checkbox-label
   > .contact-form-castom-checkbox {
   background-color: #404bbf;
-  fill: #fff;
+  border: none;
+  fill: #f4f4fd;
 }
 
 .contact-form-checkbox:focus
